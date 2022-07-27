@@ -1,0 +1,25 @@
+@import '_themes.scss';
+
+footer {
+  display: flex;
+  justify-content: center;
+  // border-top: 1px solid $secondary-900;
+  padding: 10px;
+
+  .logo-box {
+    display: block;
+    text-align: center;
+    margin: 20px;
+
+    .logo-name {
+      font-size: 12px;
+      margin: 2px 0 0;
+      color: $white;
+    }
+
+    .logo-img {
+      height: 24px;
+      margin: 0 5px;
+    }
+  }
+}

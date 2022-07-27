@@ -1,0 +1,41 @@
+@import '_themes.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 10px auto 20px;
+
+  .img-box {
+    min-width: 120px;
+    text-align: left;
+
+    img {
+      margin-left: 10px;
+      max-width: 75px;
+      max-height: 75px;
+    }
+  }
+
+  p {
+    margin: 0 auto 4px;
+  }
+
+  .info {
+    text-align: left;
+
+    .job {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  
+    .company {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  
+    .period {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}

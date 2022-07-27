@@ -1,0 +1,40 @@
+@import '_themes.scss';
+
+.container {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    user-select: none;
+    background: transparent;
+    color: $white;
+    margin: 6px 0;
+    padding: 0 2px;
+  }
+
+  textarea {
+    height: 100px;
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    color: $white;
+    outline: 1px solid $secondary-900;
+    background-color: $primary-700;
+  }
+
+  p {
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-align: right;
+  }
+}
+
+textarea:hover {
+  outline: 1px solid $secondary-500 !important;
+}
+
+textarea:focus {
+   outline: 1px solid $secondary-500 !important;
+}

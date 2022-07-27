@@ -1,0 +1,76 @@
+@import '_themes.scss';
+
+header {
+  padding: 5px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 30px;
+  // border-bottom: 1px solid $secondary-900;
+  
+  @media (min-width: $min-mobile) {
+    grid-template-columns: auto 1fr;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+
+    .dev-icon {
+      height: 40px;
+      margin: 0 5px;
+    }
+
+    .dev-name {
+      margin-left: 10px;
+    }
+  }
+
+  .navbar-web {
+    display: none;
+    justify-self: right;
+    
+    @media (min-width: $min-mobile) {
+      display: flex;
+    }
+  }
+
+  .navbar-web a{
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+  }
+
+  .navbar-web a:hover{
+    border-bottom: 1px solid $secondary-400;
+  }
+
+  .burger-btn {
+    display: block;
+    cursor: pointer;
+    margin: auto;
+
+    @media (min-width: $min-mobile) {
+      display: none;
+    }
+  }
+}
+
+.navbar-mb {
+  background-color: $primary-800;
+  position: absolute;
+  z-index: 1;
+  width: calc(100% - 18px);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.navbar-mb a{
+  display: block;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  border-bottom: 1px solid $secondary-900;
+}

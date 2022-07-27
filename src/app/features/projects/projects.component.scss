@@ -1,0 +1,25 @@
+@import '_themes.scss';
+
+.container {
+  text-align: center;
+  margin: 30px auto;
+  height: 100%;
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .grid-projects {
+    display: block;
+    
+    @media (min-width: $min-mobile) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    wc-card {
+      margin: 0 10px;
+      flex: 1 0 33.3%;
+    }
+  }
+}

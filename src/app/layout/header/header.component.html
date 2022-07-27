@@ -1,0 +1,22 @@
+<header>
+  <div class="title">
+    <!-- <img class="dev-icon" src="./assets/dev-icon.png" alt="dev-icon"> -->
+    <!-- <img src="./assets/developer.png" alt="developer" width="75px"> -->
+    <p class="dev-name">Juan Eneque</p>
+  </div>
+  <div class="burger-btn" (click)="toggleNavbar()">
+    <img src="./assets/burger-button.png" alt="burger-button">
+  </div>
+  <nav class="navbar-web">
+    <a (click)="redirect('')">Home</a>
+    <a (click)="redirect('about-me')">About me</a>
+    <a (click)="redirect('projects')">Projects</a>
+    <a (click)="redirect('contact-me')">Contact me</a>
+  </nav>
+</header>
+<nav class="navbar-mb" *ngIf="isNavbarActive">
+  <a (click)="redirect('')">Home</a>
+  <a (click)="redirect('about-me')">About me</a>
+  <a (click)="redirect('projects')">Projects</a>
+  <a (click)="redirect('contact-me')">Contact me</a>
+</nav>

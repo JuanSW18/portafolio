@@ -1,0 +1,52 @@
+@import '_themes.scss';
+
+.container {
+  width: 75vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    user-select: none;
+    background: transparent;
+    color: $white;
+    margin: 6px 0;
+    padding: 0 2px;
+    left: 10px;
+  }
+  
+  input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    color: $white;
+    outline: 1px solid $secondary-900;
+    background-color: $primary-700;
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  span.error {
+    color: $error;
+    font-size: 12px;
+    margin: 8px 0 0 12px;
+  }
+}
+
+input:hover {
+  outline: 1px solid $secondary-500 !important;
+}
+
+input:focus {
+  outline: 2px solid $secondary-500 !important;
+}
+
+input.error {
+  outline: 1px solid $error !important;
+}
+

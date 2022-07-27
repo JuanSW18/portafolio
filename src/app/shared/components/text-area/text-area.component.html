@@ -1,0 +1,5 @@
+<div class="container">
+  <label for="textarea">{{ label }}</label>
+  <textarea name="textarea" required [(ngModel)]="value" [maxLength]="maxChars"></textarea>
+  <p class="counter">{{ getCounter() }}/{{ maxChars }}</p>
+</div>

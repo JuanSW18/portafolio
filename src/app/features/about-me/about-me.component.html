@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>About me</h1>
+  <div class="detail">
+    <wc-accordion title="# Education">
+      <wc-work-item *ngFor="let job of educationList"
+        [img]="job.img"
+        [job]="job.job"
+        [company]="job.company"
+        [period]="job.period">
+      </wc-work-item>
+    </wc-accordion>
+    <wc-accordion title="# Work Experience">
+      <wc-work-item *ngFor="let job of jobList"
+        [img]="job.img"
+        [job]="job.job"
+        [company]="job.company"
+        [period]="job.period">
+      </wc-work-item>
+    </wc-accordion>
+    <wc-accordion title="# Tech Skills">
+      <div class="tech-container">
+        <wc-tech-skill *ngFor="let skill of techList"
+          [label]="skill.label"
+          [image]="skill.img">
+        </wc-tech-skill>
+      </div>
+    </wc-accordion>
+  </div>
+  <div class="detail-web">
+    <div class="education">
+      <h2>Education</h2>
+      <wc-work-item *ngFor="let job of educationList"
+        [img]="job.img"
+        [job]="job.job"
+        [company]="job.company"
+        [period]="job.period">
+        </wc-work-item>
+    </div>
+    <div class="works">
+      <h2>Work Experience</h2>
+      <wc-work-item *ngFor="let job of jobList"
+        [img]="job.img"
+        [job]="job.job"
+        [company]="job.company"
+        [period]="job.period">
+      </wc-work-item>
+    </div>
+    <div class="techs">
+      <h2>Tech Skills</h2>
+      <div class="tech-container">
+        <wc-tech-skill *ngFor="let skill of techList"
+          [label]="skill.label"
+          [image]="skill.img">
+        </wc-tech-skill>
+      </div>
+    </div>
+  </div>
+</div>

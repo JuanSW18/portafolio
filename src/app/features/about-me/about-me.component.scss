@@ -1,0 +1,85 @@
+@import '_themes.scss';
+
+.container {
+  text-align: center;
+
+  @media (min-width: $min-mobile) {
+    width: 97vw;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
+  .detail {
+    display: block;
+
+    @media (min-width: $min-mobile) {
+      display: none;
+    }
+  }
+
+  .detail-web {
+    display: none;
+    border-top: 1px solid $white;
+
+    @media (min-width: $min-mobile) {
+      display: grid;
+      column-gap: 25px;
+      grid-template-areas: 
+        'education techs'
+        'works techs';
+    }
+
+    .education {
+      grid-area: education;
+      border-right: 1px solid $white;
+      border-bottom: 1px solid $white;
+    }
+    
+    .works {
+      grid-area: works;
+      border-right: 1px solid $white;
+    }
+    
+    .techs {
+      grid-area: techs;
+    }
+
+    // @media (min-width: $min-mobile) {
+    //   display: grid;
+    //   grid-template-columns: repeat(2, 1fr);
+    // }
+
+    // .column:nth-child(2n+1) {
+    //   border-left: none !important;
+    //   border-right: 1px solid $white;
+    // }
+
+    // .column:nth-child(2n) {
+    //   border-left: 1px solid $white;
+    //   border-right: none !important;
+    // }
+
+    // .column {
+    //   height: calc(#{$min-height-mb} - 20vh);
+
+    //   h2 {
+    //     text-decoration: underline;
+    //     font-size: 18px;
+    //   }
+    // }
+  }
+}
+
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  margin: 15px auto;
+}

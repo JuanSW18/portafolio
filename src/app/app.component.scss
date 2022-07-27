@@ -1,0 +1,11 @@
+@import '_themes.scss';
+
+.container {
+  min-height: $min-height-mb;
+  background-image: url('../assets/background-blurs.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  border: 1px solid $secondary-900;
+}

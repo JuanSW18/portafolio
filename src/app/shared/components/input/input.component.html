@@ -1,0 +1,16 @@
+<div class="container">
+  <label for="input">{{ label }}</label>
+  <input name="input" required
+    [type]="type"
+    [(ngModel)]="value"
+    (change)="changeValue()"
+    (keyup)="changeValue()"
+    (click)="changeValue()"
+    [ngClass]="{
+      'error': hasErrors
+    }"
+    [disabled]="isDisabled">
+  <ng-container *ngIf="hasErrors">
+    <span class="error">{{ errorMessage }}</span>
+  </ng-container>
+</div>

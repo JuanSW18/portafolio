@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '_themes.scss';
+
+html{
+  position: relative;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  background-color: $primary-900;
+  color: $white;
+}
