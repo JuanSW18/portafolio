@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'layout-footer',
@@ -8,5 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent {
 
   constructor() { }
+
+  openSocialNetwork(name: string) {
+    const socialNetworks = Object.create(environment.socialNetwork);
+    const url = socialNetworks[name];
+    window.open(url, '_blank');
+  }
 
 }
