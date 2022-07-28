@@ -15,17 +15,37 @@
     text-align: left;
     row-gap: 20px;
 
-    button {
-      height: 30px;
-      width: 100%;
-      color: $white;
-      border-radius: 12px;
-      border: 1px solid $primary-900;
-      background-color: $secondary-400;
-    }
-
     button:hover {
       background-color: $secondary-500;
     }
+
+    button:disabled{
+      background-color: $primary-500;
+    }
   }
+
+  .thanks {
+    text-align: center;
+    width: 80%;
+    margin: 20vh 30px;
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .message {
+      font-size: 14px;
+    }
+  }
+}
+
+button {
+  height: 30px;
+  width: 100%;
+  color: $white;
+  border-radius: 12px;
+  border: 1px solid $primary-900;
+  background-color: $secondary-400;
+  cursor: pointer;
 }

@@ -1,9 +1,32 @@
 <div class="contact-me-container">
   <h1>Contact me</h1>
-  <div class="form">
-    <wc-input type="text" label="Name"></wc-input>
-    <wc-input type="email" label="Email"></wc-input>
-    <wc-text-area label="Message" [maxChars]="200"></wc-text-area>
-    <button>Send message</button>
+  <div class="form" [formGroup]="messageForm" *ngIf="!isMessageSent">
+    <wc-input #nameInput
+      type="text"
+      label="Name"
+      formControlName="name"
+      ngDefaultControl
+      (keyup)="onNameChange()">
+    </wc-input>
+    <wc-input #emailInput
+      type="email"
+      label="Email"
+      formControlName="email"
+      ngDefaultControl
+      (keyup)="onEmailChange()">
+    </wc-input>
+    <wc-text-area #messageInput
+      label="Message"
+      formControlName="message"
+      [maxChars]="200"
+      ngDefaultControl
+      (keyup)="onMessageChange()">
+    </wc-text-area>
+    <button type="button" (click)="sendMessage()">Send message</button>
+  </div>
+  <div class="thanks" *ngIf="isMessageSent">
+    <p class="title">Thank you!</p>
+    <p class="message">Your message has been accepted. You will recieve answer really soon!</p>
+    <button type="button" (click)="sendNewMessage()">Send new message</button>
   </div>
 </div>

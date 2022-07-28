@@ -11,6 +11,7 @@ import { ContactMeComponent } from './features/contact-me/contact-me.component';
 import { SharedModule } from './shared/shared.module';
 import { AboutMeComponent } from './features/about-me/about-me.component';
 import { ProjectsComponent } from './features/projects/projects.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ProjectsComponent } from './features/projects/projects.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
