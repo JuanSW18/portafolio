@@ -1,5 +1,20 @@
 <div class="container">
   <label for="textarea">{{ label }}</label>
-  <textarea name="textarea" required [(ngModel)]="value" [maxLength]="maxChars"></textarea>
-  <p class="counter">{{ getCounter() }}/{{ maxChars }}</p>
+  <textarea name="textarea" required
+    [ngClass]="{'error': hasErrors}"
+    [(ngModel)]="value"
+    [maxLength]="maxChars"
+    (change)="changeValue()"
+    (keyup)="changeValue()"
+    (click)="changeValue()"
+    ></textarea>
+  <!-- <p class="counter">{{ getCounter() }}/{{ maxChars }}</p>
+  <ng-container *ngIf="hasErrors">
+    <span class="error">{{ errorMessage }}</span>
+  </ng-container> -->
+
+  <div class="msg-box" [ngClass]="{'error': hasErrors}">
+    <span class="error" *ngIf="hasErrors">{{ errorMessage }}</span>
+    <span class="counter">{{ getCounter() }}/{{ maxChars }}</span>
+  </div>
 </div>

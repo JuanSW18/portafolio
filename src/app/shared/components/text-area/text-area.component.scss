@@ -29,6 +29,22 @@
     font-size: 12px;
     text-align: right;
   }
+
+  .msg-box {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    span.error {
+      color: $error;
+      font-size: 12px;
+      margin: 2px 0 0 12px;
+    }
+
+    &.error {
+      justify-content: space-between;
+    }
+  }
 }
 
 textarea:hover {
@@ -37,4 +53,8 @@ textarea:hover {
 
 textarea:focus {
    outline: 1px solid $secondary-500 !important;
+}
+
+textarea.error {
+  outline: 1px solid $error !important;
 }
