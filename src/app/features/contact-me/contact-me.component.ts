@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InputComponent } from 'src/app/shared/components/input/input.component';
 import { TextAreaComponent } from 'src/app/shared/components/text-area/text-area.component';
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -12,12 +14,14 @@ export class ContactMeComponent implements OnInit{
 
   messageForm: FormGroup;
   isMessageSent: boolean = false;
+  isLoading: boolean = false;
 
   @ViewChild('nameInput') nameInput: InputComponent;
   @ViewChild('emailInput') emailInput: InputComponent;
   @ViewChild('messageInput') messageInput: TextAreaComponent;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private fireService: FirebaseService) { }
 
   ngOnInit(): void {
     this.initMessageForm();
@@ -73,7 +77,23 @@ export class ContactMeComponent implements OnInit{
 
   sendMessage() {
     if (this.messageForm.valid) {
-      this.isMessageSent = true;
+      this.isLoading = true;
+      const message = {
+        date: UtilsService.getCurrentDate(),
+        name: this.messageForm.get('name').value,
+        email: this.messageForm.get('email').value,
+        message: this.messageForm.get('message').value
+      }
+      this.fireService.saveMessage(message).then(
+        () => {
+          this.isLoading = false;
+          this.isMessageSent = true;
+        },
+        () => {
+          this.isLoading = false;
+          this.isMessageSent = true;
+        }
+      );
     }
   }
 
