@@ -7,6 +7,7 @@ import { TechSkillComponent } from './components/tech-skill/tech-skill.component
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { WorkItemComponent } from './components/work-item/work-item.component';
 import { CardComponent } from './components/card/card.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 
@@ -18,6 +19,7 @@ import { CardComponent } from './components/card/card.component';
     AccordionComponent,
     WorkItemComponent,
     CardComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { CardComponent } from './components/card/card.component';
     AccordionComponent,
     WorkItemComponent,
     CardComponent,
+    LoaderComponent,
   ]
 })
 export class SharedModule { }
