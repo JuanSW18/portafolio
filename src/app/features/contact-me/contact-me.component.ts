@@ -4,6 +4,7 @@ import { InputComponent } from 'src/app/shared/components/input/input.component'
 import { TextAreaComponent } from 'src/app/shared/components/text-area/text-area.component';
 import { FirebaseService } from 'src/app/shared/services/firebase.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { CONTACT_ME_ES } from './data/contact-me.constants';
 
 @Component({
   selector: 'app-contact-me',
@@ -25,6 +26,10 @@ export class ContactMeComponent implements OnInit{
 
   ngOnInit(): void {
     this.initMessageForm();
+  }
+
+  get contactMeLabels() {
+    return CONTACT_ME_ES;
   }
 
   initMessageForm() {
@@ -94,6 +99,10 @@ export class ContactMeComponent implements OnInit{
           this.isMessageSent = true;
         }
       );
+    } else {
+      this.onNameChange();
+      this.onEmailChange();
+      this.onMessageChange();
     }
   }
 

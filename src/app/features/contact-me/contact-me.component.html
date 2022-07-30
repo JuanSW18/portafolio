@@ -1,33 +1,33 @@
 <wc-loader [isLoading]="isLoading"></wc-loader>
 <div class="contact-me-container">
-  <h1>Contact me</h1>
+  <h1>{{ contactMeLabels.title }}</h1>
   <div class="form" [formGroup]="messageForm" *ngIf="!isMessageSent">
     <wc-input #nameInput
       type="text"
-      label="Name"
+      [label]="contactMeLabels.nameInputLabel"
       formControlName="name"
       ngDefaultControl
       (keyup)="onNameChange()">
     </wc-input>
     <wc-input #emailInput
       type="email"
-      label="Email"
+      [label]="contactMeLabels.emailInputLabel"
       formControlName="email"
       ngDefaultControl
       (keyup)="onEmailChange()">
     </wc-input>
     <wc-text-area #messageInput
-      label="Message"
+      [label]="contactMeLabels.messageInputLabel"
       formControlName="message"
       [maxChars]="200"
       ngDefaultControl
       (keyup)="onMessageChange()">
     </wc-text-area>
-    <button type="button" (click)="sendMessage()">Send message</button>
+    <button type="button" (click)="sendMessage()">{{ contactMeLabels.buttonLabel }}</button>
   </div>
   <div class="thanks" *ngIf="isMessageSent">
-    <p class="title">Thank you!</p>
-    <p class="message">Your message has been accepted. You will recieve answer really soon!</p>
-    <button type="button" (click)="sendNewMessage()">Send new message</button>
+    <p class="title">{{ contactMeLabels.thanks.title }}</p>
+    <p class="message">{{ contactMeLabels.thanks.message }}</p>
+    <button type="button" (click)="sendNewMessage()">{{ contactMeLabels.thanks.button }}</button>
   </div>
 </div>

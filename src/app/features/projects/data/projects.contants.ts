@@ -1,3 +1,11 @@
+export const PROJECT_ES = {
+  title: 'Proyectos'
+};
+
+export const PROJECT_EN = {
+  title: 'Projects'
+};
+
 export const PROJECT_LIST = [
   {
     img: './assets/projects/yape-logo.png',

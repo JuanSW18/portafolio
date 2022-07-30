@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>About me</h1>
+  <h1>{{ aboutMeLabels.title }}</h1>
   <div class="detail">
-    <wc-accordion title="# Education">
+    <wc-accordion [title]="aboutMeLabels.educationLabel">
       <wc-work-item *ngFor="let job of educationList"
         [img]="job.img"
         [job]="job.job"
@@ -9,7 +9,7 @@
         [period]="job.period">
       </wc-work-item>
     </wc-accordion>
-    <wc-accordion title="# Work Experience">
+    <wc-accordion [title]="aboutMeLabels.workLabel">
       <wc-work-item *ngFor="let job of jobList"
         [img]="job.img"
         [job]="job.job"
@@ -17,7 +17,7 @@
         [period]="job.period">
       </wc-work-item>
     </wc-accordion>
-    <wc-accordion title="# Tech Skills">
+    <wc-accordion [title]="aboutMeLabels.techLabel">
       <div class="tech-container">
         <wc-tech-skill *ngFor="let skill of techList"
           [label]="skill.label"
@@ -28,7 +28,7 @@
   </div>
   <div class="detail-web">
     <div class="education">
-      <h2>Education</h2>
+      <h2>{{ aboutMeLabels.educationLabel }}</h2>
       <wc-work-item *ngFor="let job of educationList"
         [img]="job.img"
         [job]="job.job"
@@ -37,7 +37,7 @@
         </wc-work-item>
     </div>
     <div class="works">
-      <h2>Work Experience</h2>
+      <h2>{{ aboutMeLabels.workLabel }}</h2>
       <wc-work-item *ngFor="let job of jobList"
         [img]="job.img"
         [job]="job.job"
@@ -46,7 +46,7 @@
       </wc-work-item>
     </div>
     <div class="techs">
-      <h2>Tech Skills</h2>
+      <h2>{{ aboutMeLabels.techLabel }}</h2>
       <div class="tech-container">
         <wc-tech-skill *ngFor="let skill of techList"
           [label]="skill.label"

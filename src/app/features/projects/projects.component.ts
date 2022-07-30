@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { PROJECT_LIST } from './data/projects.contants';
+import { PROJECT_ES, PROJECT_LIST } from './data/projects.contants';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  get projectLabels() {
+    return PROJECT_ES;
   }
 
   get projectList() {
