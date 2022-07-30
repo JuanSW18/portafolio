@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutMeComponent } from './features/about-me/about-me.component';
-import { ContactMeComponent } from './features/contact-me/contact-me.component';
-import { ProjectsComponent } from './features/projects/projects.component';
-import { WelcomeComponent } from './features/welcome/welcome.component';
 import { MainContainerComponent } from './layout/main-container/main-container.component';
 
 const routes: Routes = [{
@@ -12,19 +8,32 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      component: WelcomeComponent,
+      pathMatch: 'full',
+      loadChildren: 
+        () => import('./features/welcome/welcome.module').then(
+          (m) => m.WelcomeModule
+        )
     },
     {
       path: 'about-me',
-      component: AboutMeComponent,
+      loadChildren: 
+        () => import('./features/about-me/about-me.module').then(
+          (m) => m.AboutMeModule
+        )
     },
     {
       path: 'projects',
-      component: ProjectsComponent,
+      loadChildren: 
+        () => import('./features/projects/projects.module').then(
+          (m) => m.ProjectsModule
+        )
     },
     {
       path: 'contact-me',
-      component: ContactMeComponent
+      loadChildren: 
+        () => import('./features/contact-me/contact-me.module').then(
+          (m) => m.ContactMeModule
+        )
     }
   ]
 }];
