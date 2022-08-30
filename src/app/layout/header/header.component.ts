@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { HEADER_ES } from './data/header.constants';
 
 @Component({
@@ -11,7 +10,7 @@ export class HeaderComponent {
 
   isNavbarActive: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   get navItems() {
     return HEADER_ES;
@@ -19,10 +18,5 @@ export class HeaderComponent {
 
   toggleNavbar() {
     this.isNavbarActive = !this.isNavbarActive;
-  }
-
-  redirect(path: string) {
-    this.isNavbarActive = false;
-    this.router.navigate([`/${path}`])
   }
 }

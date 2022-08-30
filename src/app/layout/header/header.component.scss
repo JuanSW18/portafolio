@@ -37,13 +37,18 @@ header {
   .navbar-web a{
     cursor: pointer;
     font-size: 14px;
-    color: white;
+    color: $secondary-400;
     text-decoration: none;
     padding: 14px 16px;
+
+    &.active {
+      font-weight: 600;
+      color: $white;
+    }
   }
 
   .navbar-web a:hover{
-    border-bottom: 1px solid $secondary-400;
+    font-weight: 600;
   }
 
   .burger-btn {
@@ -75,8 +80,13 @@ header {
 .navbar-mb a{
   display: block;
   font-size: 14px;
-  color: white;
+  color: $secondary-200;
   text-decoration: none;
   padding: 14px 16px;
   border-bottom: 1px solid $secondary-900;
+
+  &.active {
+    font-weight: 600;
+    color: $white;
+  }
 }

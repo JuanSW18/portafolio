@@ -8,9 +8,20 @@
     <img src="./assets/burger-button.png" alt="burger-button">
   </div>
   <nav class="navbar-web">
-    <a *ngFor="let item of navItems" (click)="redirect(item.path)">{{ item.name }}</a>
+    <a *ngFor="let item of navItems"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
+      {{ item.name }}
+    </a>
   </nav>
 </header>
 <nav class="navbar-mb" *ngIf="isNavbarActive">
-  <a *ngFor="let item of navItems" (click)="redirect(item.path)">{{ item.name }}</a>
+  <a *ngFor="let item of navItems"
+    (click)="toggleNavbar()"
+    [routerLink]="item.path"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}">
+    {{ item.name }}
+  </a>
 </nav>
