@@ -4,7 +4,7 @@ header {
   padding: 5px;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 30px;
+  grid-template-columns: 1fr 60px;
   // border-bottom: 1px solid $secondary-900;
   
   @media (min-width: $min-mobile) {
@@ -47,9 +47,15 @@ header {
   }
 
   .burger-btn {
-    display: block;
+    display: flex;
     cursor: pointer;
     margin: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-400;
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
 
     @media (min-width: $min-mobile) {
       display: none;
